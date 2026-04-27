@@ -1,18 +1,23 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testeur de Palette</title>
+// On attend que le DOM soit chargé
+document.addEventListener('DOMContentLoaded', () => {
+    const inputs = document.querySelectorAll('.color-input');
 
+    // Fonction pour mettre à jour la couleur
+    const updateColor = (input) => {
+        const targetId = input.getAttribute('data-target');
+        const display = document.getElementById(targetId);
+        const colorValue = input.value;
+        
+        display.style.backgroundColor = colorValue;
+    };
 
-    <script>
-        function updateColor(targetId, value) {
-            const display = document.getElementById(targetId);
-            // On applique la valeur directement au style background
-            display.style.backgroundColor = value;
-        }
-    </script>
+    // On initialise les couleurs au démarrage
+    inputs.forEach(input => {
+        updateColor(input);
 
-</body>
-</html>
+        // On écoute chaque frappe de clavier
+        input.addEventListener('input', () => {
+            updateColor(input);
+        });
+    });
+});
