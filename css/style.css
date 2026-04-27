@@ -19,3 +19,17 @@
         .btn:hover {
             background-color: #0056b3;
         }
+
+.v4-split { display: grid; grid-template-columns: 1fr 1.6fr; min-height: 200px; }
+  .v4-left { background: #1E2420; padding: 2rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+  .v4-right { background: #F5F0EA; padding: 2rem 1.5rem; }
+  .v4-initial { font-size: 48px; font-weight: 500; color: #4A6358; line-height: 1; font-family: var(--font-serif); }
+  .v4-name { font-size: 13px; color: #7A8C7E; font-family: var(--font-mono); letter-spacing: 0.08em; margin-top: 8px; }
+  .v4-links { display: flex; flex-direction: column; gap: 6px; }
+  .v4-link { font-size: 12px; color: #4A6358; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+  .v4-link::before { content: ''; display: block; width: 16px; height: 0.5px; background: #4A6358; }
+  .v4-right-t { font-size: 11px; color: #C47A3C; font-family: var(--font-mono); letter-spacing: 0.08em; margin: 0 0 0.5rem; }
+  .v4-right-title { font-size: 22px; font-weight: 500; color: #1E2420; font-family: var(--font-serif); line-height: 1.25; margin: 0 0 0.75rem; }
+  .v4-right-body { font-size: 13px; color: #4D5B52; line-height: 1.7; margin: 0 0 1rem; }
+  .v4-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .v4-tag { font-size: 11px; padding: 3px 9px; border-radius: 20px; background: #E0D9CE; color: #4A6358; }
