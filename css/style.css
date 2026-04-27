@@ -1,3 +1,14 @@
+:root {
+--c_fond: #1E2420;
+--c_accent_cold: #4A6358;
+--c_text_sec: #7A8C7E;
+--c_accent_hot: #C47A3C;
+--c_highlights: #E8B97A;
+--c_fond2: #F5F0EA;
+--c_cards: #FAFAF7;
+--c_bord: #E0D9CE;
+  }
+
 body {
   font-family: system-ui, -apple-system, sans-serif;
   background: var(--fond);
