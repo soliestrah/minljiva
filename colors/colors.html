@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testeur de Palette</title>
+</head>
+<body>
+
+    <h1>Mon Testeur de Palette</h1>
+    <p>Tapez un nom de couleur (ex: <i>royalblue</i>) ou un code Hex (ex: <i>#ff5733</i>)</p>
+
+    <div class="palette-container">
+        <div class="color-card">
+            <div id="preview1" class="color-display" style="background-color: #6200ea;"></div>
+            <input type="text" oninput="updateColor('preview1', this.value)" placeholder="#6200ea" value="#6200ea">
+        </div>
+
+        <div class="color-card">
+            <div id="preview2" class="color-display" style="background-color: #03dac6;"></div>
+            <input type="text" oninput="updateColor('preview2', this.value)" placeholder="#03dac6" value="#03dac6">
+        </div>
+
+        <div class="color-card">
+            <div id="preview3" class="color-display" style="background-color: #ff0266;"></div>
+            <input type="text" oninput="updateColor('preview3', this.value)" placeholder="#ff0266" value="#ff0266">
+        </div>
+
+        <div class="color-card">
+            <div id="preview4" class="color-display" style="background-color: #ffde03;"></div>
+            <input type="text" oninput="updateColor('preview4', this.value)" placeholder="#ffde03" value="#ffde03">
+        </div>
+    </div>
+</body>
+</html>
