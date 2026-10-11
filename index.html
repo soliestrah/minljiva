@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mes sites</title>
+<meta name="theme-color" content="#101014">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --frame:#101014; --frame-ink:#EDEDF0;
+    --display:"Unbounded","Arial Black",system-ui,sans-serif;
+    --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;display:flex;flex-direction:column;min-height:100svh;background:var(--frame);color:var(--frame-ink);font-family:var(--body);font-size:16px;line-height:1.45;
+    padding-top:env(safe-area-inset-top,0px)}
+
+  .bar{flex:none;padding:18px 28px 16px}
+  .bar h1{margin:0;font-family:var(--display);font-weight:500;font-size:.95rem;letter-spacing:.01em}
+
+  .panels{flex:1;display:flex;gap:0;min-height:0}
+
+  .panel{
+    position:relative;flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;gap:14px;
+    padding:32px 28px calc(32px + env(safe-area-inset-bottom,0px));
+    background:var(--bg);color:var(--fg);text-decoration:none;overflow:hidden;
+    transition:flex-grow .45s cubic-bezier(.2,.7,.2,1);
+  }
+  .panel::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--ac)}
+
+  .name{margin:0;font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.3vw,3rem);line-height:1.12;text-wrap:balance;overflow-wrap:anywhere}
+  .name span{background:linear-gradient(var(--ac),var(--ac)) 0 100%/0% .14em no-repeat;transition:background-size .35s ease;
+    -webkit-box-decoration-break:clone;box-decoration-break:clone;padding-bottom:.08em}
+  .desc{margin:0;max-width:30ch;font-size:1.05rem;font-weight:500}
+  .host{margin:0;font-size:.88rem;opacity:.85;overflow-wrap:anywhere}
+
+  .panel:hover .name span,.panel:focus-visible .name span{background-size:100% .14em}
+  .panel:focus-visible{outline:4px solid var(--fg);outline-offset:-8px}
+
+  @media (hover:hover) and (min-width:820px){
+    .panel:hover,.panel:focus-visible{flex-grow:1.55}
+  }
+
+  /* Trois univers, trois couleurs */
+  .perso{--bg:#2B1D3A;--fg:#EFE7F8;--ac:#E9A25C}
+  .heart{--bg:#BFE0F7;--fg:#1F3A6B;--ac:#FFB3CF}
+  .mc{--bg:#3F6B2C;--fg:#F3F7E6;--ac:#8A5E34}
+
+  @media (max-width:819px){
+    .bar{padding:16px 20px 14px}
+    .panels{flex-direction:column}
+    .panel{flex:1 1 auto;min-height:30svh;padding:24px 20px calc(24px + 10px)}
+    .name{font-size:clamp(1.5rem,7vw,2.1rem)}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+  <header class="bar"><h1>Mes sites</h1></header>
+
+  <main class="panels">
+    <a class="panel perso" href="https://soliestrah.github.io/V/index.html">
+      <h2 class="name"><span>Site perso</span></h2>
+      <p class="desc">Mon site personnel.</p>
+      <p class="host">soliestrah.github.io/V</p>
+    </a>
+
+    <a class="panel heart" href="https://soliestrah.github.io/carnet.-3/index.html">
+      <h2 class="name"><span>Carnet Heartopia</span></h2>
+      <p class="desc">Collections, chasse, recettes et profits.</p>
+      <p class="host">soliestrah.github.io/carnet.-3</p>
+    </a>
+
+    <a class="panel mc" href="https://soliestrah.github.io/etabli.mct/etabli.html">
+      <h2 class="name"><span>Établi Minecraft</span></h2>
+      <p class="desc">Mon établi pour Minecraft.</p>
+      <p class="host">soliestrah.github.io/etabli.mct</p>
+    </a>
+  </main>
+</body>
+</html>
