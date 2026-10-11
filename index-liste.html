@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mes sites</title>
+<meta name="theme-color" content="#ECE8F4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,800&family=Yeseva+One&family=Familjen+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ECE8F4; --ink:#2B1D3A;
+    --display:"Playfair Display",Georgia,serif;
+    --serif:"Yeseva One",Georgia,serif;
+        --body:"Familjen Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;display:flex;flex-direction:column;min-height:100svh;background:var(--paper);color:var(--ink);
+    font-family:var(--body);font-size:16px;line-height:1.45;padding-top:env(safe-area-inset-top,0px)}
+
+  .bar{flex:none;padding:18px 28px 16px}
+  .bar h1{margin:0;font-family:var(--serif);font-weight:400;font-size:1.1rem}
+
+  /* Au repos : fond lilas, filet de la couleur de chaque site. Au survol : la ligne prend la couleur du site. */
+  .liste{flex:1;display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom,0px)}
+
+  .site{
+    flex:1 1 0;min-height:140px;display:flex;align-items:baseline;justify-content:space-between;gap:10px 40px;
+    padding:24px 28px;border-top:8px solid var(--ac);
+    color:var(--ink);text-decoration:none;
+    transition:background-color .2s,color .2s;
+  }
+  .nom{margin:0;font-family:var(--display);font-style:italic;font-weight:800;font-size:clamp(2.4rem,5.6vw,5.6rem);line-height:1.05;white-space:nowrap;
+    transform-origin:0 100%;transition:transform .3s cubic-bezier(.3,1.7,.5,1)}
+  .host{margin:0;flex:none;text-align:right;font-family:var(--serif);font-size:1.15rem;opacity:.85;overflow-wrap:anywhere}
+
+  .site:hover,.site:focus-visible,.site:active{background:var(--bg);color:var(--fg)}
+  .site:hover .nom,.site:focus-visible .nom{transform:rotate(-1.5deg) scale(1.02)}
+  .site:focus-visible{outline:4px solid var(--ink);outline-offset:-12px}
+
+  /* Écran étroit : même rangement pour toutes les lignes, nom puis lien dessous */
+  @media (max-width:899px){
+    .site{flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:8px}
+    .nom{font-size:clamp(2.4rem,9vw,4.4rem);white-space:normal;overflow-wrap:anywhere}
+    .host{text-align:left}
+  }
+  @media (max-width:640px){
+    .bar,.site{padding-left:20px;padding-right:20px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}.site:hover .nom,.site:focus-visible .nom{transform:none}}
+</style>
+</head>
+<body>
+  <header class="bar"><h1>Mes sites</h1></header>
+
+  <main class="liste">
+
+    <a class="site" style="--bg:#2B1D3A;--fg:#EFE7F8;--ac:#E9A25C" href="https://soliestrah.github.io/V/index.html">
+      <div class="texte">
+        <h2 class="nom">Site perso</h2>
+      </div>
+      <p class="host">soliestrah.github.io/V</p>
+    </a>
+
+    <a class="site" style="--bg:#BFE0F7;--fg:#1F3A6B;--ac:#FFB3CF" href="https://soliestrah.github.io/carnet.-3/index.html">
+      <div class="texte">
+        <h2 class="nom">Carnet Heartopia</h2>
+      </div>
+      <p class="host">soliestrah.github.io/carnet.-3</p>
+    </a>
+
+    <a class="site" style="--bg:#3F6B2C;--fg:#F3F7E6;--ac:#8A5E34" href="https://soliestrah.github.io/etabli.mct/etabli.html">
+      <div class="texte">
+        <h2 class="nom">Établi Minecraft</h2>
+      </div>
+      <p class="host">soliestrah.github.io/etabli.mct</p>
+    </a>
+
+    <!--
+      AJOUTER UN SITE : copie un bloc <a> ci-dessus, colle-le ici (avant </main>)
+      et change le nom, le lien et les 3 couleurs :
+      --bg = fond au survol, --fg = texte au survol, --ac = filet du haut (toujours visible).
+    -->
+
+  </main>
+</body>
+</html>
